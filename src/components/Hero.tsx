@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -10,19 +10,23 @@ export default function Hero() {
     // Simple fade-in animations
     const timer1 = setTimeout(() => {
       if (heroRef.current) {
-        heroRef.current.querySelector('.hero-title')?.classList.add('animate-fade-in');
+        heroRef.current
+          .querySelector(".hero-title")
+          ?.classList.add("animate-fade-in");
       }
     }, 300);
 
     const timer2 = setTimeout(() => {
       if (heroRef.current) {
-        heroRef.current.querySelector('.hero-subtitle')?.classList.add('animate-fade-in');
+        heroRef.current
+          .querySelector(".hero-subtitle")
+          ?.classList.add("animate-fade-in");
       }
     }, 600);
 
     const timer3 = setTimeout(() => {
       if (phoneRef.current) {
-        phoneRef.current.classList.add('animate-fade-in');
+        phoneRef.current.classList.add("animate-fade-in");
       }
     }, 900);
 
@@ -45,7 +49,10 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-white text-slate-900 antialiased overflow-x-hidden" id="hero">
+    <div
+      className="bg-white text-slate-900 antialiased overflow-x-hidden"
+      id="hero"
+    >
       <style>{`
         .phone-frame {
           aspect-ratio: 9 / 19;
@@ -161,21 +168,60 @@ export default function Hero() {
       `}</style>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="min-h-screen relative flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden">
+      <section
+        ref={heroRef}
+        className="min-h-screen relative flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden"
+      >
         {/* Food Background */}
         <div className="food-bg-grid">
-          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=400" alt="" />
-          <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&q=80&w=400" alt="" />
+          <img
+            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
+          <img
+            src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&q=80&w=400"
+            alt=""
+          />
         </div>
         <div className="food-bg-overlay"></div>
 
@@ -188,14 +234,30 @@ export default function Hero() {
             Effortlessly navigate your way to nutritional finesse
           </p>
 
-          {/* App Display */}
+          {/* App Display Container */}
           <div ref={phoneRef} className="flex justify-center mb-16 opacity-0">
-            <div className="phone-frame">
-              <img
-                src="/splash.png"
-                className="w-full h-full object-cover"
-                alt="Nuvion app interface"
-              />
+            <div className="grid grid-cols-1 grid-rows-1 place-items-center">
+              <div className="phone-frame col-start-1 row-start-1 -translate-x-32 md:-translate-x-56 scale-90 -rotate-12 z-0 opacity-60 transition-transform duration-700">
+                <img
+                  src="/sharing.png"
+                  className="w-full h-full object-cover"
+                  alt="Nuvion interface left"
+                />
+              </div>
+              <div className="phone-frame col-start-1 row-start-1 translate-x-32 md:translate-x-56 scale-90 rotate-12 z-0 opacity-60 transition-transform duration-700">
+                <img
+                  src="/nearby.png"
+                  className="w-full h-full object-cover"
+                  alt="Nuvion interface right"
+                />
+              </div>
+              <div className="phone-frame col-start-1 row-start-1 z-10 shadow-2xl scale-100 relative">
+                <img
+                  src="/splash.png"
+                  className="w-full h-full object-cover"
+                  alt="Nuvion interface center"
+                />
+              </div>
             </div>
           </div>
 
@@ -204,7 +266,6 @@ export default function Hero() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
               See Nuvion in Action
             </h2>
-            
             <div className="video-container mx-auto" onClick={handleVideoClick}>
               <video
                 ref={videoRef}
@@ -215,9 +276,13 @@ export default function Hero() {
                 <source src="" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              
-              <div className={`play-button ${isVideoPlaying ? 'hidden' : ''}`}>
-                <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+
+              <div className={`play-button ${isVideoPlaying ? "hidden" : ""}`}>
+                <svg
+                  className="w-10 h-10 text-white ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
@@ -226,8 +291,18 @@ export default function Hero() {
 
           {/* Scroll Indicator */}
           <div className="animate-bounce">
-            <svg className="w-6 h-6 text-emerald-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <svg
+              className="w-6 h-6 text-emerald-600 mx-auto"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </div>
         </div>
