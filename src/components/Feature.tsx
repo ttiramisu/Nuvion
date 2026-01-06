@@ -45,7 +45,7 @@ const features: FeatureData[] = [
     accentText: "text-blue-600",
     accentBg: "bg-blue-100",
     dotColor: "fill-blue-500",
-    step: "Critique",
+    step: "Community",
   },
   {
     title: "Sharing",
@@ -60,7 +60,7 @@ const features: FeatureData[] = [
     accentText: "text-purple-600",
     accentBg: "bg-purple-100",
     dotColor: "fill-purple-500",
-    step: "Act",
+    step: "Share",
   },
   {
     title: "Nearby",
@@ -75,7 +75,7 @@ const features: FeatureData[] = [
     accentText: "text-pink-600",
     accentBg: "bg-pink-100",
     dotColor: "fill-pink-500",
-    step: "Network",
+    step: "Nearby",
   },
 ];
 
