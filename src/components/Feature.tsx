@@ -53,25 +53,11 @@ const features: FeatureData[] = [
       "Visual goal tracking",
       "Health status dashboard",
     ],
-    img: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=800",
+    img: "/avatar.png",
     color: "#8b5cf6",
     accentText: "text-purple-600",
     accentBg: "bg-purple-100",
     dotColor: "fill-purple-500",
-  },
-  {
-    title: "Health Dashboard",
-    desc: "Monitor your nutritional balance, goal progress, and areas for improvement with a clear, user-friendly health status dashboard.",
-    bullets: [
-      "Track nutritional balance",
-      "Monitor goal progress",
-      "Identify areas for improvement",
-    ],
-    img: "https://images.unsplash.com/photo-1588776814546-9938a8c82a10?auto=format&fit=crop&q=80&w=800",
-    color: "#f97316", // orange
-    accentText: "text-orange-600", // orange text accent
-    accentBg: "bg-orange-100", // light orange background
-    dotColor: "fill-orange-500", // orange dot
   },
   {
     title: "Sharing & Community",

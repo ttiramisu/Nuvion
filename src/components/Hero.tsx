@@ -212,7 +212,7 @@ export default function Hero() {
                 poster="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1600"
                 onEnded={() => setIsVideoPlaying(false)}
               >
-                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                <source src="" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
