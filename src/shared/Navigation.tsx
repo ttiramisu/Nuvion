@@ -29,7 +29,7 @@ export default function Nav() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/#hero" className="flex items-center gap-2 group">
+            <Link to="/#-" className="flex items-center gap-2 group">
               <img
                 src="/Nuvion.png"
                 alt="Nuvion Logo"

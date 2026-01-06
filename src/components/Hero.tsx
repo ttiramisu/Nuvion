@@ -51,7 +51,7 @@ export default function Hero() {
   return (
     <div
       className="bg-white text-slate-900 antialiased overflow-x-hidden"
-      id="hero"
+      id="-"
     >
       <style>{`
         .phone-frame {

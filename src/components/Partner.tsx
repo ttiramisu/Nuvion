@@ -33,7 +33,7 @@ export default function Partners() {
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Our Partners
+          Potential Partners
         </h2>
         <p className="text-lg text-slate-500 max-w-2xl mx-auto">
           Working alongside leaders in nutrition, wellness, and fitness.

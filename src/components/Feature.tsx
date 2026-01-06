@@ -10,68 +10,72 @@ interface FeatureData {
   bullets: string[];
   img: string;
   color: string;
-  // Specific Tailwind strings to ensure JIT compiler picks them up
   accentText: string;
   accentBg: string;
   dotColor: string;
+  step: string;
 }
 
 const features: FeatureData[] = [
   {
-    title: "Food Recognition",
-    desc: "Nuvion uses sophisticated AI-powered food recognition to identify meals from images in real time, eliminating the hassle of manual logging.",
+    title: "Scanner",
+    desc: "Instantly scan meals using AI-powered food recognition to identify dishes and nutritional details in real time.",
     bullets: [
       "Scan any dish in seconds",
-      "Accurate nutritional breakdown",
-      "Regional cuisine database",
+      "Automatic nutrition detection",
+      "Supports a wide range of cuisines",
     ],
     img: "/scanner.png",
     color: "#10b981",
     accentText: "text-emerald-600",
     accentBg: "bg-emerald-100",
     dotColor: "fill-emerald-500",
+    step: "Scan",
   },
   {
-    title: "Daily Meal Records",
-    desc: "Automatically organize all recognized meals into a daily intake log to monitor eating habits and nutritional consistency over time.",
+    title: "Community",
+    desc: "Explore a community forum where users share meals, experiences, and tips through posts and discussions.",
     bullets: [
-      "Track meals automatically",
-      "Analyze nutritional trends",
-      "Identify improvement areas",
+      "Browse community posts",
+      "Join discussions and comments",
+      "Learn from shared experiences",
     ],
-    img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800",
+    img: "/community.png",
     color: "#3b82f6",
     accentText: "text-blue-600",
     accentBg: "bg-blue-100",
     dotColor: "fill-blue-500",
+    step: "Critique",
   },
   {
-    title: "Avatar & Health Dashboard",
-    desc: "A customized digital avatar that changes in tandem with your dietary habits, providing visual feedback on your progress.",
+    title: "Sharing",
+    desc: "Stay connected with friends by sharing meals, progress updates, and achievements in a private social space.",
     bullets: [
-      "Digital avatar evolution",
-      "Visual goal tracking",
-      "Health status dashboard",
+      "Share meals with friends",
+      "View friends’ updates",
+      "Encourage accountability together",
     ],
-    img: "/avatar.png",
+    img: "/sharing.png",
     color: "#8b5cf6",
     accentText: "text-purple-600",
     accentBg: "bg-purple-100",
     dotColor: "fill-purple-500",
+    step: "Act",
   },
   {
-    title: "Sharing & Community",
-    desc: "Share real meal updates and progress milestones through Nuvion's community page and Instagram, promoting accountability and community support.",
+    title: "Nearby",
+    desc: "Discover nearby food spots and stores around you, making it easier to plan meals and healthy choices.",
     bullets: [
-      "Post updates and milestones",
-      "Build accountability",
-      "Engage with supportive community",
+      "Find nearby food stores",
+      "Explore local meal options",
+      "Make informed food decisions",
     ],
-    img: "/sharing.png",
+    img: "/nearby.png",
     color: "#f472b6",
     accentText: "text-pink-600",
     accentBg: "bg-pink-100",
     dotColor: "fill-pink-500",
+    step: "Network",
   },
 ];
 
@@ -131,7 +135,7 @@ const Feature: React.FC = () => {
           position: relative;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        .connector-line {
+        .connector-line {Network
           stroke-dasharray: 300;
           stroke-dashoffset: 300;
           animation: draw 2s ease-out forwards;
@@ -230,7 +234,7 @@ const Feature: React.FC = () => {
                   <div
                     className={`inline-flex items-center gap-2 ${f.accentBg} ${f.accentText} px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase`}
                   >
-                    Feature {i + 1}
+                    {f.step}
                   </div>
 
                   <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">

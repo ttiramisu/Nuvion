@@ -46,9 +46,16 @@ export default function Footer() {
         </div>
 
         {/* Copyright with Logo */}
-        <div className="text-center text-sm text-slate-400 mt-6 flex items-center justify-center gap-2">
-          <span>© {new Date().getFullYear()}</span>
-          <span>Nuvion. All rights reserved.</span>
+        <div className="text-center text-sm text-slate-400 mt-6 flex flex-col items-end justify-center gap">
+          <div>
+            <a href="mailto:nuvion.nutrimax@gmail.com" className="hover:underline">
+              nuvion.nutrimax@gmail.com
+            </a>
+          </div>
+          <div>
+            <span>© {new Date().getFullYear()}</span>
+            <span>Nuvion. All rights reserved.</span>
+          </div>
         </div>
       </div>
 
