@@ -27,7 +27,7 @@ export default function Download() {
       id="pricing"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        {/* LEFT — TEXT */}
+        {/* LEFT - TEXT */}
         <div className="space-y-8">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
             Built for real life.
@@ -39,7 +39,7 @@ export default function Download() {
               {" "}
               clear, evidence-based meal guidance{" "}
             </span>
-            — empowering smarter food decisions exactly when you need them.
+            - empowering smarter food decisions exactly when you need them.
           </p>
 
           <p className="text-xl text-slate-600 leading-relaxed">
@@ -48,7 +48,7 @@ export default function Download() {
           </p>
         </div>
 
-        {/* RIGHT — PRICING CARD */}
+        {/* RIGHT - PRICING CARD */}
         <div className="relative rounded-3xl border border-emerald-200 bg-emerald-50 p-10 shadow-[0_40px_80px_-30px_rgba(34,197,94,0.35)]">
           <div className="absolute -top-5 right-8 rounded-full bg-emerald-600 px-5 py-1 text-white text-sm font-medium">
             101% Rebate
@@ -61,7 +61,7 @@ export default function Download() {
             participate and meet goals receive
             <span className="font-medium text-emerald-700">
               {" "}
-              full refunds — plus more.
+              full refunds - plus more.
             </span>
           </p>
 

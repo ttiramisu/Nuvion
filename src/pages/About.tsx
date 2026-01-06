@@ -24,44 +24,44 @@ export default function About() {
 
   const teamMembers = [
     {
-      name: "Xin Yu",
-      role: "Brain of Nuvion",
-      color: "bg-emerald-100 text-emerald-700",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
-    },
-    {
       name: "Jiachuan",
       role: "Whispers to Food",
-      color: "bg-blue-100 text-blue-700",
+      color: "bg-emerald-50 text-emerald-700",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
     },
     {
+      name: "Xin Yu",
+      role: "Brain of Nuvion",
+      color: "bg-sky-50 text-sky-700",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+    },
+    {
       name: "Cheng Ao",
       role: "Builds app with Codex",
-      color: "bg-purple-100 text-purple-700",
+      color: "bg-violet-50 text-violet-700",
       image:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400",
     },
     {
       name: "Xiao Yu",
       role: "Touches people",
-      color: "bg-amber-100 text-amber-700",
+      color: "bg-orange-50 text-orange-700",
       image:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
     },
     {
       name: "Bang Yan",
       role: "Tells stories in Chinese",
-      color: "bg-rose-100 text-rose-700",
+      color: "bg-rose-50 text-rose-700",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
     },
     {
       name: "You!",
       role: "Join our Team",
-      color: "bg-yellow-100 text-yellow-600",
+      color: "bg-neutral-100 text-neutral-700",
       image:
         "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=400",
     },
@@ -132,7 +132,7 @@ export default function About() {
                 <p>
                   For young professionals juggling long workdays, social
                   commitments, and constant decision fatigue, eating well often
-                  becomes an afterthought—outsourced to convenience, fast food,
+                  becomes an afterthought-outsourced to convenience, fast food,
                   and conflicting online advice. Not because they don't care,
                   but because the system makes it hard to care consistently.
                 </p>
@@ -145,7 +145,7 @@ export default function About() {
                 <p className="mb-4">
                   Pronounced <span className="font-semibold">New-V-On</span>,
                   Nuvion represents a <strong>new vision</strong> of
-                  nutrition—one that fits seamlessly into real lives instead of
+                  nutrition-one that fits seamlessly into real lives instead of
                   demanding perfection. We believe healthy decisions shouldn't
                   require expert knowledge, endless tracking, or willpower
                   alone. They should feel intuitive, personal, and achievable in
@@ -155,7 +155,7 @@ export default function About() {
                   At its core, Nuvion is a personalized nutrition companion. By
                   integrating lifestyle habits, regional food culture, and
                   biometric signals, Nuvion transforms everyday meals into
-                  clear, evidence-based insights—right when decisions matter
+                  clear, evidence-based insights-right when decisions matter
                   most. No noise. No guilt. Just clarity.
                 </p>
               </div>
@@ -167,7 +167,7 @@ export default function About() {
                 <p className="mb-4">
                   That's why Nuvion brings nutrition to life through a{" "}
                   <strong>dynamic digital avatar</strong> that evolves alongside
-                  your habits—reflecting progress, consistency, and change. As
+                  your habits-reflecting progress, consistency, and change. As
                   users improve, their avatar does too, creating an emotional
                   connection that turns abstract health goals into something
                   tangible and motivating.
@@ -176,13 +176,13 @@ export default function About() {
                   And because real change thrives in shared spaces, Nuvion
                   extends beyond the individual. With BeReal-style Instagram
                   sharing and community-driven accountability, users don't just
-                  track meals—they participate in a culture of honesty, support,
+                  track meals-they participate in a culture of honesty, support,
                   and collective growth. Progress becomes visible. Consistency
                   becomes social.
                 </p>
                 <p>
                   In the short term, Nuvion's proprietary food-recognition
-                  technology—trained on regional cuisines—delivers accuracy
+                  technology-trained on regional cuisines-delivers accuracy
                   competitors can't match. In the long term, it's the community
                   that becomes our moat: a living network of people making
                   better decisions together, every day.
