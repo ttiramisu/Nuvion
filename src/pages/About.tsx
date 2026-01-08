@@ -124,6 +124,15 @@ export default function About() {
             </h2>
 
             <div className="space-y-8 text-lg text-slate-700 leading-relaxed">
+              {/* Hero Image */}
+              <div className="w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mb-8">
+                <img 
+                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Healthy food spread"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
               <div className="bg-slate-50 p-8 rounded-2xl">
                 <p className="mb-4">
                   Modern life moves fast. Too fast for rigid meal plans, calorie
@@ -132,8 +141,7 @@ export default function About() {
                 <p>
                   For young professionals juggling long workdays, social
                   commitments, and constant decision fatigue, eating well often
-                  becomes an afterthought-outsourced to convenience, fast food,
-                  and conflicting online advice. Not because they don't care,
+                  becomes an afterthought. Not because they don't care,
                   but because the system makes it hard to care consistently.
                 </p>
               </div>
@@ -145,17 +153,10 @@ export default function About() {
                 <p className="mb-4">
                   Pronounced <span className="font-semibold">New-V-On</span>,
                   Nuvion represents a <strong>new vision</strong> of
-                  nutrition-one that fits seamlessly into real lives instead of
-                  demanding perfection. We believe healthy decisions shouldn't
-                  require expert knowledge, endless tracking, or willpower
-                  alone. They should feel intuitive, personal, and achievable in
-                  real time.
-                </p>
-                <p>
-                  At its core, Nuvion is a personalized nutrition companion. By
+                  nutrition - it is a personalized nutrition companion. By
                   integrating lifestyle habits, regional food culture, and
                   biometric signals, Nuvion transforms everyday meals into
-                  clear, evidence-based insights-right when decisions matter
+                  clear, evidence-based insights - right when decisions matter
                   most. No noise. No guilt. Just clarity.
                 </p>
               </div>
@@ -165,28 +166,38 @@ export default function About() {
                   But guidance alone isn't enough.
                 </h3>
                 <p className="mb-4">
-                  That's why Nuvion brings nutrition to life through a{" "}
+                  That's why Nuvion extends beyond the individual, allowing us to thrive in shared spaces. BeReal-style Instagram
+                  sharing, community-driven accountability, and a{" "}
                   <strong>dynamic digital avatar</strong> that evolves alongside
-                  your habits-reflecting progress, consistency, and change. As
-                  users improve, their avatar does too, creating an emotional
-                  connection that turns abstract health goals into something
-                  tangible and motivating.
-                </p>
-                <p className="mb-4">
-                  And because real change thrives in shared spaces, Nuvion
-                  extends beyond the individual. With BeReal-style Instagram
-                  sharing and community-driven accountability, users don't just
-                  track meals-they participate in a culture of honesty, support,
+                  habits create an emotional connection that makes abstract goals tangible. Users get to participate in a culture of honesty, support,
                   and collective growth. Progress becomes visible. Consistency
                   becomes social.
                 </p>
                 <p>
                   In the short term, Nuvion's proprietary food-recognition
-                  technology-trained on regional cuisines-delivers accuracy
+                  technology - trained on regional cuisines - delivers accuracy
                   competitors can't match. In the long term, it's the community
                   that becomes our moat: a living network of people making
                   better decisions together, every day.
                 </p>
+              </div>
+
+              {/* Community Image */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600" 
+                    alt="People sharing meals together"
+                    className="w-full h-64 object-cover"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600" 
+                    alt="Mobile app mockup"
+                    className="w-full h-64 object-cover"
+                  />
+                </div>
               </div>
 
               <div className="text-center py-8">
@@ -218,6 +229,8 @@ export default function About() {
               accessible, personalized nutrition
             </p>
           </div>
+
+          {/* Team Introduction */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
@@ -258,15 +271,24 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="fade-in-section bg-gradient-to-br from-emerald-50 to-blue-50 p-10 rounded-3xl shadow-lg">
-            <p className="text-lg text-slate-700 leading-relaxed">
-              Nuvion accounts for <strong>regional dietary differences</strong>,
-              with advice synthesized from physical condition, lifestyle, unique
-              goals and more for a personalized experience. Digital avatars
-              reflect progress in real-time, fostering emotional attachment
-              while Instagram-integrated sharing features cultivate
-              health-oriented digital communities, boosting engagement.
-            </p>
+          <div className="fade-in-section grid md:grid-cols-2 gap-8 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800" 
+                alt="Regional cuisine diversity"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 p-10 rounded-3xl shadow-lg">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Nuvion accounts for <strong>regional dietary differences</strong>,
+                with advice synthesised from physical condition, lifestyle, unique
+                goals and more for a personalized experience. Digital avatars
+                reflect progress in real-time, fostering emotional attachment
+                while Instagram-integrated sharing features cultivate
+                health-oriented digital communities, boosting engagement.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -276,6 +298,15 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="fade-in-section text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Mission</h2>
+          </div>
+
+          {/* Mission Image */}
+          <div className="fade-in-section mb-12 rounded-2xl overflow-hidden shadow-xl">
+            <img 
+              src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80&w=1200" 
+              alt="Fitness and nutrition lifestyle"
+              className="w-full h-80 object-cover"
+            />
           </div>
 
           <div className="fade-in-section grid md:grid-cols-3 gap-8">
@@ -295,9 +326,9 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3">Personalized Guidance</h3>
+              <h3 className="text-xl font-bold mb-3">Personalised Guidance</h3>
               <p className="text-slate-600">
-                Evidence-based dietary guidance integrating lifestyle
+                Nuvion provides personalised, evidence-based dietary guidance and health goals by integrating user-provided lifestyle
                 information and biochemical markers
               </p>
             </div>
@@ -320,8 +351,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Real-Time Progress</h3>
               <p className="text-slate-600">
-                Dynamic avatar that evolves alongside your healthy habits and
-                achievements
+                Nuvion tracks real-time progress, supported by a dynamic avatar that evolves alongside healthy habits
               </p>
             </div>
 
@@ -343,8 +373,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Community Support</h3>
               <p className="text-slate-600">
-                BeReal-style Instagram integration for accountability and
-                community engagement
+                BeReal-style Instagram integration fosters accountability and community support
               </p>
             </div>
           </div>
@@ -386,27 +415,12 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-              <div className="flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-emerald-600 rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg">
-                    <svg
-                      className="w-16 h-16 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-lg font-semibold text-slate-700">
-                    Growing our community
-                  </p>
-                </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=600" 
+                  alt="Young adults exercising and staying healthy"
+                  className="w-full h-96 object-cover"
+                />
               </div>
             </div>
           </div>
