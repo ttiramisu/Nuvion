@@ -27,16 +27,16 @@ export default function About() {
 
   const teamMembers = [
     {
-      name: "Xin Yu",
-      role: "Brain of Nuvion",
-      color: "bg-sky-50 text-sky-700",
-      image: "/cindy.jpg",
-    },
-    {
       name: "Jiachuan",
       role: "Whispers to Food",
       color: "bg-emerald-50 text-emerald-700",
       image: "/jiachuan.jpg",
+    },
+    {
+      name: "Xin Yu",
+      role: "Brain of Nuvion",
+      color: "bg-sky-50 text-sky-700",
+      image: "/cindy.jpg",
     },
     {
       name: "Cheng Ao",
@@ -60,7 +60,7 @@ export default function About() {
       name: "You!",
       role: "Join our Team",
       color: "bg-neutral-100 text-neutral-700",
-      image: "/you.jpg",
+      image: "/you.png",
     },
   ];
 
@@ -168,7 +168,7 @@ export default function About() {
       {/* Brand Story */}
       <section ref={storyRef} className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="fade-in-section">
+          <div className="">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
               Our Story
             </h2>
