@@ -226,7 +226,7 @@ export default function Hero() {
         <div className="food-bg-overlay"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="relative z-10 mt-12 max-w-6xl mx-auto">
           <h1 className="text-emerald-600 hero-title text-7xl md:text-9xl font-bold tracking-tight mb-6 opacity-0">
             Nuvion
           </h1>

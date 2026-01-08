@@ -117,7 +117,7 @@ export default function About() {
       `}</style>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-emerald-50 to-white">
+      <section className="pt-52 pb-20 px-6 bg-gradient-to-b from-emerald-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 text-emerald-600">
             About Nuvion
