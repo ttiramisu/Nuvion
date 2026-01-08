@@ -27,32 +27,28 @@ export default function About() {
 
   const teamMembers = [
     {
-      name: "Jiachuan",
-      role: "Whispers to Food",
-      color: "bg-emerald-50 text-emerald-700",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
-    },
-    {
       name: "Xin Yu",
       role: "Brain of Nuvion",
       color: "bg-sky-50 text-sky-700",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+      image: "/cindy.jpg",
+    },
+    {
+      name: "Jiachuan",
+      role: "Whispers to Food",
+      color: "bg-emerald-50 text-emerald-700",
+      image: "/jiachuan.jpg",
     },
     {
       name: "Cheng Ao",
       role: "Builds app with Codex",
       color: "bg-violet-50 text-violet-700",
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400",
+      image: "/chengao.jpg",
     },
     {
       name: "Xiao Yu",
       role: "Touches people",
       color: "bg-orange-50 text-orange-700",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
+      image: "/xiaoyu.jpg",
     },
     {
       name: "Bang Yan",
@@ -66,7 +62,7 @@ export default function About() {
       role: "Join our Team",
       color: "bg-neutral-100 text-neutral-700",
       image:
-        "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&q=80&w=400",
+        "/you.jpg",
     },
   ];
 
