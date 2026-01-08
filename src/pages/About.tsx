@@ -54,15 +54,13 @@ export default function About() {
       name: "Bang Yan",
       role: "Tells stories in Chinese",
       color: "bg-rose-50 text-rose-700",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+      image: "/bang.jpg",
     },
     {
       name: "You!",
       role: "Join our Team",
       color: "bg-neutral-100 text-neutral-700",
-      image:
-        "/you.jpg",
+      image: "/you.jpg",
     },
   ];
 
