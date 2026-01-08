@@ -19,11 +19,11 @@ interface FeatureData {
 const features: FeatureData[] = [
   {
     title: "Scanner",
-    desc: "Instantly scan meals using AI-powered food recognition to identify dishes and nutritional details in real time.",
+    desc: "Instant meal scanner supported by proprietary IC-Vision and an extensive database for micronutrient reports and actionable advice.",
     bullets: [
-      "Scan any dish in seconds",
-      "Automatic nutrition detection",
-      "Supports a wide range of cuisines",
+      "Addresses uncertainty and indecisiveness in food choices.",
+      "Extensive database that covers a wide range of regional cuisines and concrete, actionable recommendations for improvements on diet",
+      "Able to recognise lesser-known cuisines that are often overlooked by existing databases.",
     ],
     img: "/scanner.png",
     color: "#10b981",
@@ -34,11 +34,11 @@ const features: FeatureData[] = [
   },
   {
     title: "Community",
-    desc: "Explore a community forum where users share meals, experiences, and tips through posts and discussions.",
+    desc: "Explore a community of health where we step towards a healthier lifestyle together",
     bullets: [
-      "Browse community posts",
-      "Join discussions and comments",
-      "Learn from shared experiences",
+      "Connects individuals with communities of similar backgrounds and experiences.",
+      "A space with centralized information on healthy diet where you can communicate, discuss, and learn from shared experiences",
+      "Browse weekly community posts for more healthy diet tips",
     ],
     img: "/community.png",
     color: "#3b82f6",
@@ -49,11 +49,11 @@ const features: FeatureData[] = [
   },
   {
     title: "Sharing",
-    desc: "Stay connected with friends by sharing meals, progress updates, and achievements in a private social space.",
+    desc: "Stay connected with friends by sharing daily meals and progress updates via Instagram-integrated sharing",
     bullets: [
-      "Share meals with friends",
-      "View friends’ updates",
-      "Encourage accountability together",
+      "Builds motivation and accountability to sustain a healthy lifestyle.",
+      "Allow your close ones to share this journey with you for mutual supervision",
+      "View yourself and others through interactive avatars",
     ],
     img: "/sharing.png",
     color: "#8b5cf6",
@@ -64,11 +64,11 @@ const features: FeatureData[] = [
   },
   {
     title: "Nearby",
-    desc: "Discover nearby food spots and stores around you, making it easier to plan meals and healthy choices.",
+    desc: " Spend your hard-earned offers and benefits at our partnered enterprises",
     bullets: [
-      "Find nearby food stores",
-      "Explore local meal options",
-      "Make informed food decisions",
+      "Puts healthier diet choices at your fingertips",
+      "Eat at healthier restaurants nearby that we selected just for you",
+      "All information on healthier choices at your fingertips",
     ],
     img: "/nearby.png",
     color: "#f472b6",
