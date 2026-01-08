@@ -13,7 +13,10 @@ export default function About() {
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.25,
+        rootMargin: "0px 0px -80px 0px",
+      }
     );
 
     const elements = document.querySelectorAll(".fade-in-section");
@@ -72,8 +75,11 @@ export default function About() {
       <style>{`
         .fade-in-section {
           opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+          transform: translateY(12px);
+          transition:
+            opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: opacity, transform;
         }
 
         .fade-in-section.animate-fade-in {
@@ -82,15 +88,22 @@ export default function About() {
         }
 
         .team-card {
-          background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.9) 100%);
+          background: linear-gradient(
+            135deg,
+            rgba(255,255,255,0.95) 0%,
+            rgba(249,250,251,0.95) 100%
+          );
           backdrop-filter: blur(10px);
           border: 1px solid rgba(226, 232, 240, 0.8);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition:
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: transform;
         }
 
         .team-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
         }
 
         body::-webkit-scrollbar {
@@ -103,22 +116,65 @@ export default function About() {
         }
       `}</style>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-emerald-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl text-emerald-600 md:text-7xl font-bold mb-6">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-emerald-600">
             About Nuvion
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
             A new vision of nutrition that fits seamlessly into real lives
           </p>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section ref={teamRef} className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="fade-in-section text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              A diverse group of experts united by a shared vision of
+              accessible, personalized nutrition
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="fade-in-section team-card p-6 rounded-2xl"
+                style={{ transitionDelay: `${index * 60}ms` }}
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-white shadow-md">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    className={`inline-block ${member.color} px-4 py-2 rounded-full text-sm font-semibold mb-3`}
+                  >
+                    {member.name}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    {member.role}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Brand Story */}
       <section ref={storyRef} className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="fade-in-section mb-16">
+          <div className="fade-in-section">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
               Our Story
             </h2>
@@ -126,8 +182,8 @@ export default function About() {
             <div className="space-y-8 text-lg text-slate-700 leading-relaxed">
               {/* Hero Image */}
               <div className="w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mb-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200" 
+                <img
+                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200"
                   alt="Healthy food spread"
                   className="w-full h-full object-cover"
                 />
@@ -141,8 +197,8 @@ export default function About() {
                 <p>
                   For young professionals juggling long workdays, social
                   commitments, and constant decision fatigue, eating well often
-                  becomes an afterthought. Not because they don't care,
-                  but because the system makes it hard to care consistently.
+                  becomes an afterthought. Not because they don't care, but
+                  because the system makes it hard to care consistently.
                 </p>
               </div>
 
@@ -152,12 +208,12 @@ export default function About() {
                 </h3>
                 <p className="mb-4">
                   Pronounced <span className="font-semibold">New-V-On</span>,
-                  Nuvion represents a <strong>new vision</strong> of
-                  nutrition - it is a personalized nutrition companion. By
-                  integrating lifestyle habits, regional food culture, and
-                  biometric signals, Nuvion transforms everyday meals into
-                  clear, evidence-based insights - right when decisions matter
-                  most. No noise. No guilt. Just clarity.
+                  Nuvion represents a <strong>new vision</strong> of nutrition -
+                  it is a personalized nutrition companion. By integrating
+                  lifestyle habits, regional food culture, and biometric
+                  signals, Nuvion transforms everyday meals into clear,
+                  evidence-based insights - right when decisions matter most. No
+                  noise. No guilt. Just clarity.
                 </p>
               </div>
 
@@ -166,12 +222,14 @@ export default function About() {
                   But guidance alone isn't enough.
                 </h3>
                 <p className="mb-4">
-                  That's why Nuvion extends beyond the individual, allowing us to thrive in shared spaces. BeReal-style Instagram
-                  sharing, community-driven accountability, and a{" "}
+                  That's why Nuvion extends beyond the individual, allowing us
+                  to thrive in shared spaces. BeReal-style Instagram sharing,
+                  community-driven accountability, and a{" "}
                   <strong>dynamic digital avatar</strong> that evolves alongside
-                  habits create an emotional connection that makes abstract goals tangible. Users get to participate in a culture of honesty, support,
-                  and collective growth. Progress becomes visible. Consistency
-                  becomes social.
+                  habits create an emotional connection that makes abstract
+                  goals tangible. Users get to participate in a culture of
+                  honesty, support, and collective growth. Progress becomes
+                  visible. Consistency becomes social.
                 </p>
                 <p>
                   In the short term, Nuvion's proprietary food-recognition
@@ -185,15 +243,15 @@ export default function About() {
               {/* Community Image */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600" 
+                  <img
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600"
                     alt="People sharing meals together"
                     className="w-full h-64 object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600" 
+                  <img
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"
                     alt="Mobile app mockup"
                     className="w-full h-64 object-cover"
                   />
@@ -217,51 +275,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section ref={teamRef} className="py-20 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="fade-in-section text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              A diverse group of experts united by a shared vision of
-              accessible, personalized nutrition
-            </p>
-          </div>
-
-          {/* Team Introduction */}
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="fade-in-section team-card p-6 rounded-2xl"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-white shadow-lg">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    className={`inline-block ${member.color} px-4 py-2 rounded-full text-sm font-semibold mb-3`}
-                  >
-                    {member.name}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900">
-                    {member.role}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* UVP Section */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -273,20 +286,21 @@ export default function About() {
 
           <div className="fade-in-section grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800" 
+              <img
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800"
                 alt="Regional cuisine diversity"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="bg-gradient-to-br from-emerald-50 to-blue-50 p-10 rounded-3xl shadow-lg">
               <p className="text-lg text-slate-700 leading-relaxed">
-                Nuvion accounts for <strong>regional dietary differences</strong>,
-                with advice synthesised from physical condition, lifestyle, unique
-                goals and more for a personalized experience. Digital avatars
-                reflect progress in real-time, fostering emotional attachment
-                while Instagram-integrated sharing features cultivate
-                health-oriented digital communities, boosting engagement.
+                Nuvion accounts for{" "}
+                <strong>regional dietary differences</strong>, with advice
+                synthesised from physical condition, lifestyle, unique goals and
+                more for a personalized experience. Digital avatars reflect
+                progress in real-time, fostering emotional attachment while
+                Instagram-integrated sharing features cultivate health-oriented
+                digital communities, boosting engagement.
               </p>
             </div>
           </div>
@@ -302,8 +316,8 @@ export default function About() {
 
           {/* Mission Image */}
           <div className="fade-in-section mb-12 rounded-2xl overflow-hidden shadow-xl">
-            <img 
-              src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80&w=1200" 
+            <img
+              src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80&w=1200"
               alt="Fitness and nutrition lifestyle"
               className="w-full h-80 object-cover"
             />
@@ -328,7 +342,8 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Personalised Guidance</h3>
               <p className="text-slate-600">
-                Nuvion provides personalised, evidence-based dietary guidance and health goals by integrating user-provided lifestyle
+                Nuvion provides personalised, evidence-based dietary guidance
+                and health goals by integrating user-provided lifestyle
                 information and biochemical markers
               </p>
             </div>
@@ -351,7 +366,8 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Real-Time Progress</h3>
               <p className="text-slate-600">
-                Nuvion tracks real-time progress, supported by a dynamic avatar that evolves alongside healthy habits
+                Nuvion tracks real-time progress, supported by a dynamic avatar
+                that evolves alongside healthy habits
               </p>
             </div>
 
@@ -373,7 +389,8 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Community Support</h3>
               <p className="text-slate-600">
-                BeReal-style Instagram integration fosters accountability and community support
+                BeReal-style Instagram integration fosters accountability and
+                community support
               </p>
             </div>
           </div>
@@ -416,8 +433,8 @@ export default function About() {
                 </ul>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=600" 
+                <img
+                  src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=600"
                   alt="Young adults exercising and staying healthy"
                   className="w-full h-96 object-cover"
                 />
