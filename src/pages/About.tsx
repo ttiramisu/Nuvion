@@ -46,7 +46,7 @@ export default function About() {
     },
     {
       name: "Xiao Yu",
-      role: "Touches people",
+      role: "Touches grass",
       color: "bg-orange-50 text-orange-700",
       image: "/xiaoyu.jpg",
     },
