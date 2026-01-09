@@ -52,7 +52,7 @@ export default function About() {
     },
     {
       name: "Bang Yan",
-      role: "Tells stories in Chinese",
+      role: "Stares at stars",
       color: "bg-rose-50 text-rose-700",
       image: "/bang.jpg",
     },
