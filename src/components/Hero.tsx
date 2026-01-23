@@ -6,6 +6,8 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [isBuffering, setIsBuffering] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -45,21 +47,38 @@ export default function Hero() {
         e.preventDefault();
         return false;
       };
-      video.addEventListener("contextmenu", preventContextMenu);
+      video.addEventListener('contextmenu', preventContextMenu);
+      
+      // Preload video on user interaction
+      const preloadVideo = () => {
+        if (video && !videoLoaded) {
+          video.load();
+          setVideoLoaded(true);
+        }
+      };
+      
+      // Trigger preload on first user interaction
+      document.addEventListener('mousemove', preloadVideo, { once: true });
+      document.addEventListener('touchstart', preloadVideo, { once: true });
+      
       return () => {
-        video.removeEventListener("contextmenu", preventContextMenu);
+        video.removeEventListener('contextmenu', preventContextMenu);
+        document.removeEventListener('mousemove', preloadVideo);
+        document.removeEventListener('touchstart', preloadVideo);
       };
     }
-  }, []);
+  }, [videoLoaded]);
 
   const handleVideoClick = () => {
     if (videoRef.current) {
       if (isVideoPlaying) {
         videoRef.current.pause();
       } else {
+        setIsBuffering(true);
         videoRef.current.play().catch((err) => {
           console.error("Video playback failed:", err);
           setVideoError(true);
+          setIsBuffering(false);
         });
       }
       setIsVideoPlaying(!isVideoPlaying);
@@ -163,6 +182,24 @@ export default function Hero() {
         .play-button.hidden {
           opacity: 0;
           pointer-events: none;
+        }
+
+        .buffering-spinner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px;
+          border: 4px solid rgba(34, 197, 94, 0.2);
+          border-top-color: #22c55e;
+          border-radius: 50%;
+          animation: spin 0.8s linear infinite;
+          z-index: 10;
+        }
+
+        @keyframes spin {
+          to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .animate-fade-in {
@@ -303,18 +340,30 @@ export default function Hero() {
                 src="https://this-is-project-elevate.netlify.app/video.mp4"
                 poster="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1600"
                 playsInline
-                preload="metadata"
+                preload="auto"
                 controlsList="nodownload nofullscreen noremoteplayback"
                 disablePictureInPicture
                 disableRemotePlayback
-                onPlay={() => setIsVideoPlaying(true)}
+                onPlay={() => {
+                  setIsVideoPlaying(true);
+                  setIsBuffering(false);
+                }}
                 onPause={() => setIsVideoPlaying(false)}
                 onEnded={() => setIsVideoPlaying(false)}
-                onError={() => setVideoError(true)}
+                onError={() => {
+                  setVideoError(true);
+                  setIsBuffering(false);
+                }}
+                onWaiting={() => setIsBuffering(true)}
+                onCanPlay={() => setIsBuffering(false)}
+                onLoadedData={() => setVideoLoaded(true)}
               />
-
+              
               {/* Transparent overlay to prevent direct video interaction */}
               <div className="video-overlay"></div>
+
+              {/* Buffering indicator */}
+              {isBuffering && <div className="buffering-spinner"></div>}
 
               <div className={`play-button ${isVideoPlaying ? "hidden" : ""}`}>
                 {videoError ? (
