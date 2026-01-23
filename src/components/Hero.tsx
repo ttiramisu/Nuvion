@@ -5,9 +5,18 @@ export default function Hero() {
   const phoneRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("");
 
   useEffect(() => {
-    // Simple fade-in animations
+    fetch("/api/video")
+      .then((res) => res.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        setVideoSrc(url);
+      });
+  }, []);
+
+  useEffect(() => {
     const timer1 = setTimeout(() => {
       if (heroRef.current) {
         heroRef.current
@@ -272,10 +281,9 @@ export default function Hero() {
                 className="w-full h-full object-cover"
                 poster="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1600"
                 onEnded={() => setIsVideoPlaying(false)}
-              >
-                <source src="" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                controls={false}
+                src={videoSrc}
+              />
 
               <div className={`play-button ${isVideoPlaying ? "hidden" : ""}`}>
                 <svg
