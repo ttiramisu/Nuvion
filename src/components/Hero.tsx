@@ -5,16 +5,7 @@ export default function Hero() {
   const phoneRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [videoSrc, setVideoSrc] = useState("");
-
-  useEffect(() => {
-    fetch("/api/video")
-      .then((res) => res.blob())
-      .then((blob) => {
-        const url = URL.createObjectURL(blob);
-        setVideoSrc(url);
-      });
-  }, []);
+  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -46,12 +37,30 @@ export default function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    // Disable right-click on video
+    const video = videoRef.current;
+    if (video) {
+      const preventContextMenu = (e: MouseEvent) => {
+        e.preventDefault();
+        return false;
+      };
+      video.addEventListener("contextmenu", preventContextMenu);
+      return () => {
+        video.removeEventListener("contextmenu", preventContextMenu);
+      };
+    }
+  }, []);
+
   const handleVideoClick = () => {
     if (videoRef.current) {
       if (isVideoPlaying) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play();
+        videoRef.current.play().catch((err) => {
+          console.error("Video playback failed:", err);
+          setVideoError(true);
+        });
       }
       setIsVideoPlaying(!isVideoPlaying);
     }
@@ -112,10 +121,22 @@ export default function Hero() {
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
           cursor: pointer;
           transition: transform 0.3s ease;
+          background: #000;
         }
 
         .video-container:hover {
           transform: scale(1.02);
+        }
+
+        .video-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .video-container video {
+          pointer-events: none;
         }
 
         .play-button {
@@ -279,20 +300,36 @@ export default function Hero() {
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover"
+                src="https://this-is-project-elevate.netlify.app/video.mp4"
                 poster="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1600"
+                playsInline
+                preload="metadata"
+                controlsList="nodownload nofullscreen noremoteplayback"
+                disablePictureInPicture
+                disableRemotePlayback
+                onPlay={() => setIsVideoPlaying(true)}
+                onPause={() => setIsVideoPlaying(false)}
                 onEnded={() => setIsVideoPlaying(false)}
-                controls={false}
-                src={videoSrc}
+                onError={() => setVideoError(true)}
               />
 
+              {/* Transparent overlay to prevent direct video interaction */}
+              <div className="video-overlay"></div>
+
               <div className={`play-button ${isVideoPlaying ? "hidden" : ""}`}>
-                <svg
-                  className="w-10 h-10 text-white ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
+                {videoError ? (
+                  <span className="text-white text-sm px-4">
+                    Video unavailable
+                  </span>
+                ) : (
+                  <svg
+                    className="w-10 h-10 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                )}
               </div>
             </div>
           </div>
